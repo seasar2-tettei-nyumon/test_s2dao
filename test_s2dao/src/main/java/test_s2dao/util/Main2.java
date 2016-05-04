@@ -27,5 +27,7 @@ public class Main2 {
 		
 		H2TableBean s = aaa.settei(1);
 		System.out.println(s.getText());
+		int num = aaa.setteiMId("引数何かいてもintが返ってくる");
+		System.out.println(num);
 	}
 }
