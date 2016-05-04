@@ -1,0 +1,8 @@
+DaoType=S2Dao
+DefaultResourcePath=/test_s2dao/src/main/resources
+DefaultRootPackage=test_s2dao
+DefaultSrcPath=/test_s2dao/src/main/java
+ServletPath=test_s2dao
+ViewType=None
+WebContentsRoot=src/main/webapp
+eclipse.preferences.version=1
