@@ -16,7 +16,7 @@ import test_s2dao.logic.IMessageProviderLogic;
 
 
 @RunWith(Enclosed.class)
-public class MainTest extends Main {
+public class MainTest {
 
 	//●謎。片付けーツールに一番近い環境はこれだが、initの部分がなかった。こっちはinitないと読み込まないのでしょうがなく書いているけど、どうやればいい？
 	//それがわかれば、だいぶ近づく。160503
@@ -32,7 +32,8 @@ public class MainTest extends Main {
 		//SingletonS2ContainerFactory.setConfigPath("app2.dicon");
 		//●これでもテストクラスで、フィールドに入るにははいる。でもこれすらやらないって方法が知りたいんだよな。片付けツールがなぜかそうなっている。どうやって？でもこれでもできなくはないからOKかな。
 		SingletonS2ContainerFactory.init();//「app.dicon」を読み込む。
-		messageProvider = SingletonS2Container.getComponent(IMessageProviderLogic.class);//インタフェースの型を指定している。
+		//messageProvider = SingletonS2Container.getComponent(IMessageProviderLogic.class);//インタフェースの型を指定している。●これも動いている。実装しているのが１つだけなのでインタフェースの指定で動く。
+		messageProvider = SingletonS2Container.getComponent("helloMessageProviderLogic");//●どうもSmart deployで自動登録したときに、コンソールに出てきているのが名前らしい。貴重な情報だった。だから「iMessageProviderLogic」とやってもコンソールに出ていないのでできなかったんだ。
 	}
 	
 	@RunWith(Enclosed.class)
